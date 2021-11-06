@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L08_signup.html</title>
+    <style>
+        p{
+         color: tomato;   
+         font-size: 1.5rem;
+
+        }
+    
+        fieldset {
+        background-color: rgb(173, 210, 224);
+            height: 750px;
+            width: 100px;
+            border-radius: 50px;
+        
+
+        
+        }
+        .p1{
+            background-color:rgb(235, 221, 235);
+            width: 400px;
+            height:30px ;
+        }
+        .p2{
+            
+            width: 420px;
+            height: 50px;
+            text-align:center;
+            font-size: 35px;
+            border-radius: 50px;
+
+        }
+h2{
+    color:red;
+    margin-left: 150px;
+}
+    </style>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form action="L08_Homework.html" method="get">
+        <fieldset>
+        <p>Your basic info</p>
+        
+        <div>
+            <label for="">Name:</label><br><br>
+            <input   class="p1" type="text" name="text" id="text"><br><br>
+
+        </div>
+        <div>
+            <label for="">Email:</label><br><br>
+            <input  class="p1" type="text" name="text" id="text"> <br><br>
+        </div>
+        <div>
+            <label for="">Password</label><br><br>
+
+            <input  class="p1" type="password" name="pass" id="pass"> <br><br>
+        </div>
+        <div>
+            <label for="">Age:</label><br><br>
+            <input type="radio" name="age" value="under18">Under 18<br>
+            <input type ="radio" name="age" vaiue="18 or order">18 or order
+        </div>
+<p>Your profile</p>
+        <div>
+            <label for="">Biography</label><br><br>
+            <textarea name="Biography" id="Biography"
+            cols="50" rows="4"></textarea><br><br>
+        </div>
+        
+        <div>
+            <label for="">Job Role:</label><br><br>
+            <select class="p1" id="job" name="User"><br>
+                <optgroup label="Web">
+                    <option>Font-End Developer</option>
+                    <option>PHP Developer</option>
+                    <option>Python Developer</option>
+                    <option> Rails Developer</option>
+                    <option> Wed Designer</option>
+                    <option>Wordpress Developer</option>
+                </optgroup>
+                <optgroup label="Mobile">
+                    <option>Android Developer</option>
+                    <option> IOS Developer</option>
+                    <option>Mobile Developer</option>
+                </optgroup>
+                <optgroup label="Business">
+                    <option>Bussiness Owner</option>
+                    <option> Freelancer</option>
+                </optgroup>
+                <optgroup label="Other">
+                    <option>Secretary</option>
+                    <option> Maintanace</option>
+                </optgroup>
+            </select><br><br>
+        </div>
+        </fieldset><br>
+        <div>
+               <input  class="p2" type="submit" name="user" value="Sign">
+           </div>
+    </form>
+</body>
+</html>
