@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10_Event.html</title>
+    <script>
+     function showimage(obj,url){
+         obj.src=url;
+     }
+    </script>
+</head>
+<body>
+    <h2>Event Demo</h2>
+    <hr>
+    <img src="hoahong.png"
+    onmousedown ="showimage(this,'tom1.png')"
+    onmouseup="showimage(this,'hoahong.png')">
+</body>
+</html>

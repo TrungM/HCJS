@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <form action=""  id="formlogin" method="get">
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="user" id="user" placeholder="nhap email"><br><br>
+
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="password" name="pass" id="pass"><br><br>
+        </div>
+        <div>
+            <input type="submit" value="Login"> <br>
+        </div>
+    </form>
+</body>
+<script>
+        document.getElementById("formlogin").onsubmit = function () {
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+
+            if (user != "admin" || pass != "123") {
+                alert ("Login Failed");
+            }
+            else {
+                alert("Login Successful !!");
+            }
+        }
+
+    </script>
+</html>

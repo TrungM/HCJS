@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+<style>
+fieldset{
+    padding: 1rem;
+    text-align:left;
+    border: brown double thick;
+    width: 200px;
+    height: 310px;
+    background-color: greenyellow;
+
+}
+.p1{
+    border:red solid thick;
+    background-color: lemonchiffon;
+    border-radius: 2rem;
+    width: 5rem;
+    text-align: center;
+}
+.p2{
+    text-align: center;
+    border:tomato solid thick;
+    background-color:goldenrod;
+    border-radius: 2rem;
+    width: 5rem;
+}
+</style>
+
+</head>
+<body>
+    <h2>Enter detail of your account</h2>
+    <hr>
+    <form action="" id="formlogin">
+        <fieldset>
+            <div>
+                <label for="">Frist name</label>
+                <input type="text" name="fristname" id="fristname"  value="Aptech">
+            </div><br>
+            <div>
+                <label for="">Last name</label>
+                <input type="text" name="lastname" id="lastname" value="FPT">
+            </div><br>
+            <div>
+                <label for="">Eamil</label>
+                <input type="text" name="email" id="email">
+            </div><br>
+            <div>
+                <label for=""> Age</label>
+                <input type="text" name="age" id="age" 
+                placeholder="Vui long nhap tuoi (18-30)">
+            </div><br>
+            <div>
+                <label for=""> Are you employed:</label><br>
+                <input type="radio" name="genre" value="Yes">Yes<br>
+                <input type="radio" name="genre" value="No" >NO
+        
+            </div><br><br>
+        </fieldset>
+       
+        <hr>
+<div>
+    <input  class="p1" type="submit" value="OK" name="btok">
+    <input  class="p2" type="reset" value="Cancel">
+</div>
+
+    </form>
+</body>
+<script>
+    document.getElementById("formlogin").onsubmit=function(){
+       var Age= document.getElementById("age").value;
+       if(Age<"18"||Age>"30"){
+           alert("Tai khoan khong hop le,Vui long nhap lai !!!");
+           document.getElementById("Age").focus();
+           return false;
+       } 
+      var fristname=document.getElementById("fristname").value;
+      var lastname=document.getElementById("lastname").value;
+      var email=document.getElementById("email").value;
+      if(fristname!="Aptech"){
+          alert(" Tai khoan khong hop le ,Vui long nhap lai!!");
+          document.getElementById("fristname").focus();
+      }
+      if(lastname!="FPT"){
+          alert("Tai khoan khong hop le,Vui long nhap lai!!");
+          document.getElementById("lastname").focus();
+      }else{
+          alert("Congratulation !!!");
+        }
+    }
+</script>
+</html>
