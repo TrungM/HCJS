@@ -56,7 +56,7 @@ fieldset{
             </div><br>
             <div>
                 <label for=""> Are you employed:</label><br>
-                <input type="radio" name="genre" value="Yes">Yes<br>
+                <input type="radio" name="genre" value="Yes" checked >Yes<br>
                 <input type="radio" name="genre" value="No" >NO
         
             </div><br><br>
@@ -74,23 +74,36 @@ fieldset{
     document.getElementById("formlogin").onsubmit=function(){
        var Age= document.getElementById("age").value;
        if(Age<"18"||Age>"30"){
-           alert("Tai khoan khong hop le,Vui long nhap lai !!!");
+           alert("Tuoi khong hop le, vui long nhap lai");
            document.getElementById("Age").focus();
            return false;
        } 
       var fristname=document.getElementById("fristname").value;
       var lastname=document.getElementById("lastname").value;
-      var email=document.getElementById("email").value;
+  
       if(fristname!="Aptech"){
-          alert(" Tai khoan khong hop le ,Vui long nhap lai!!");
+          alert(" Fristname khong hop le ,Vui long nhap lai!!");
           document.getElementById("fristname").focus();
+          return false;
       }
       if(lastname!="FPT"){
-          alert("Tai khoan khong hop le,Vui long nhap lai!!");
+          alert(" Lastname khong hop le,Vui long nhap lai!!");
           document.getElementById("lastname").focus();
-      }else{
-          alert("Congratulation !!!");
+          return false;
+      }
+        var email=document.getElementById("email").value;
+        if(email=="null" || email.trim().length==0){
+        alert("Vui long nhap email");
+        document.getElementById("email").focus();
+        return false;
         }
+        else{
+          alert("Congratulation !!!");
+    
     }
+}
+
+     
+    
 </script>
 </html>
