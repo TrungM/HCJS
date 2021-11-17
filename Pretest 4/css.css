@@ -1,0 +1,43 @@
+body{
+    border: aqua solid thick;
+height: 100%;
+ }
+ .p1{
+     float: left;
+     width: 60%;
+    
+ }
+ .p2{
+     width: 300px;
+     float: right;
+     margin-right: 187pt;
+     
+    
+ 
+ }
+ div{
+     padding: 0.5rem;
+ }
+ a{
+     padding: 2rem;
+     text-decoration: none;
+     color: black;
+     font-family: fantasy;
+ }
+ h2{
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     box-shadow: darkgray 10em;
+     color: darksalmon;
+     float: right;
+     margin-right:800pt;
+     
+ }
+ .p3{
+     width:290px;
+     
+ }
+ .p4{
+     margin-top:550px;
+     text-align: center;
+     
+ }

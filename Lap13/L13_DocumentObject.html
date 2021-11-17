@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function change_image(){
+        var imgtext=document.getElementById("mying").alt;
+        if(imgtext=="rose"){
+            document.getElementById("mying").src="hoahong.png";
+            document.getElementById("mying").alt="sun";
+            document.getElementById("mytext").value="Sunflower";
+
+        }
+        else{
+            document.getElementById("mying").src="flower1 (2).png";
+            document.getElementById("mying").alt="rose";
+            document.getElementById("mytext").value="Roses";
+
+        }
+    }
+</script>
+</head>
+<body>
+    <img id="mying" src="hoahong.png" alt="rose"><br>
+    <div>
+        <label for="">Flower</label>
+        <input id="mytext" value="Rose" readonly="readonly"><br>
+        <input type="button" value="Change Image" onlick="change_image()" >
+
+    </div>
+</body>
+</html>

@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var n= prompt("Vui long nhap so :");
-/*var count=0;
-while(n>0){
-n=n/10;
-count++;
+        var n = parseInt( prompt("Vui long nhap so :"));
+        var temp;
+        temp = n;
+        var count = 0;
+        while (temp > 0) {
+            temp = Math.floor(temp / 10) ;
+            count++;
+            console.log('temp=' + temp);
+        }
+        console.log("count=" + count);
+             temp = n;
+        var sum = 0;
+        var r;
+        while (temp > 0) {
+            r = temp % 10;
+            temp= Math.floor(temp/ 10);
+            sum = sum + Math.pow(r, count);//luy thua
+            console.log("sum=" + sum);
+        }
+      
 
-}*/
-var temp;
-temp=n;
-var sum=0;
-var r;
-while(temp>0){
-    r=temp%10;
-    temp/=10;
-sum=sum+(r*r*r);
-}
-if( temp==sum){
-    alert("So la so Armstrong");
-}
-else{
-    alert("So khong phai la so Armstrong");
-};
+
+        if (n== sum) {
+            alert("So la so Armstrong");
+        }
+        else {
+            alert("So khong phai la so Armstrong");
+        };
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Pretest 4/css.css">
+    
+</head>
+<style>
+    fieldset{
+        width: 300px;
+        margin: 10px;
+        border: tomato solid thick;
+    }
+
+h1{
+    color: brown;
+    box-shadow: gold transparent;
+    margin: 2rem;
+}
+.p1{
+   width: 5rem;
+    background-color:chocolate;
+    color: black;
+    border-radius: 1rem;
+    text-align: center;
+
+}.p2{
+    width: 3rem;
+    background-color:cornflowerblue;
+    color:crimson;
+    border-radius: 1rem;
+    text-align: center;
+    
+}
+.p3{
+    padding: 5px;
+    text-align: center;
+}
+</style>
+<body>
+    <div>
+        <img src="logo.jpg" alt="">
+        <h2>Amazing Brigdes</h2>
+    </div>
+    <nav>
+        <a href="">Home</a><a href="">WORLD BRIGDES</a>
+        <a href="">TOP LONGEST</a>
+        <a href="">TOP HIGHEST</a>
+        <a href="">CONTACT</a>
+        <div>
+            <hr>
+            <h1> Contact us</h1>
+            <form action="" id="form">
+                <fieldset>
+                    <legend>Your Details:</legend>
+                    <div>
+                        <label for="">Name</label>
+                        <input type="text" name="Name" id="name"  pattern="[a-z A-Z]{5,20}"  value="MINH TRUNG" required>
+                    </div>
+                    <div>
+                        <label for="">Email</label>
+                        <input  type="text" name="Email" id="email" pattern="[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{0,9}.[a-zA-Z0-9]{0,9}" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Your Review
+                    </legend>
+                    <div>
+                        <label for=""> How did you hear about us</label>
+                        <select id="select" name="form-select" required>
+                            <option value="Google">Google</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Advert">Advert</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                        <div>
+                        <label for="">Would you visit again</label>
+                        <input type="radio" name="gender" id="gender"value="Yes" checked>Yes
+                        <input type="radio" name="gender"  id="no" value="No">No
+                        <input type="radio" name="gender"   id="maybe" Value="Maybe">Maybe
+                    </div>
+                    <div>
+                        <label for="">Comment</label>
+                       
+                    </div>
+                    <div>
+                        <textarea name="comment" id="comment" cols="50" rows="10" required></textarea>
+                    </div>
+                    <div>
+                        <input type="checkbox" names="sign"  id="sign" value="Sign me up for email update" checked>Sign me up for email update
+                    </div>
+                    <div >
+                        <input  class ="p1" type="submit" value="Sumit Review">
+                        <input class="p2" type="reset" value="Reset">
+                    </div>
+
+                </fieldset>
+                <div class="p3">
+                    copyright &copy; by ABC TEAM Arpil ,2020.
+                </div>
+            </form>
+</body>
+<script>
+document.getElementById("form").onsubmit=function(e){
+e.preventDefault();
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var select=document.getElementById("select").value;
+var comment=document.getElementById("comment").value;
+var sign=document.getElementById("sign").value;
+var gender=document.getElementById("gender").value;
+
+var a=["Thong bao hop le "];
+a.push(`Name: ${name}`);
+a.push(`Email: ${email}`);
+a.push(`Seclect: ${select}`)
+a.push(`Comment: ${comment}`);
+a.push(`Would you visit again: ${gender}`);
+ alert(a.join("\n"));
+}
+</script>
+</html>

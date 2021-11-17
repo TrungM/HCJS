@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.writeln("<h2>Navigator Object Demo </h2><br>");
+        document.writeln("<pre>");
+            document.writeln("<div>");
+                document.writeln("<b>Brower Information </b><br>");
+                document.writeln('Brower names:'+ navigator.appName);
+                document.writeln('Brower version:'+ navigator.appVersion);
+                document.writeln('Brower language:'+ navigator.browserLanguage);
+                document.writeln('Platform:'+navigator.platform);
+                if(navigator.cookieEnabled){
+                    document.write('Cookie is enable in th the brower.');
+
+                }
+                document.writeln("</div>");
+                document.writeln("</pre>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
