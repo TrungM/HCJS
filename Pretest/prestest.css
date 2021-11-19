@@ -1,0 +1,22 @@
+img{
+    padding: 50px;
+    width: 60%;
+margin-left: 200px;
+}
+a{
+    text-decoration: none;
+}
+span{
+    color: blue;
+    padding: 6rem;
+    
+}
+h2{
+    background-color: rgb(65, 121, 10);
+    color: white;
+    text-align: center;
+}
+.p1{
+    text-align: center;
+
+}
