@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Pretest/prestest.css">
+    
+    <style>
+        fieldset {
+            padding: 1rem;
+        }
+
+        div {
+            padding: 0.3rem;
+        }
+
+        .p1 {
+            border-bottom: red solid thick;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Online Shopee</h2>
+    <hr>
+    <nav>
+        <a href=""> <span>HOME</span></a>
+        <a href=""> <span>PRODUCT</span></a>
+        <a href=""><span>SHOPS</span></a>
+        <a href=""><span>REGISRTER</span></a>
+        <a href=""><span>SIGNIN</span></a>
+    </nav>
+    <hr>
+
+    <form action="" id="login">
+        <fieldset>
+            <h2>Member Information</h2>
+            <div>
+                <label for="">Fullname</label>
+                <input class="p1" type="text" name="fullname" id="name" required>
+            </div>
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender" id="gender1" value="Male" checked>Male
+                <input type="radio" name="gender" id="gender2" value="Female">Female
+
+            </div>
+            <div id="hobbies">
+                <label for="">Hobbies</label>
+                <input type="checkbox" name="Shopping" id="hobbies1" value="Shopping">Shopping
+                <input type="checkbox" name="Eating out" id="hobbies2" value="Eating out">Eating out
+                <input type="checkbox" name="Sporting" id="hobbies3" value="Sporting"> Sporting
+
+            </div>
+            <div>
+                <label for="">Date of Brith</label>
+                <input type="date" id="dob" name="dob" value="2003-10-18">
+            </div>
+            <div>
+                <label for="">Address</label>
+                <input class="p1" type="text" name="address" id="Address" required>
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input class="p1" type="text" name="Email" id="Email"
+                    pattern="[a-zA-z0-9]{2,}@[a-zA-Z0-9]{2,6}\.[a-zA-Z]{2,4}" required>
+            </div>
+            <div>
+                <label for="">Phone number</label>
+                <input class="p1" type="text" name="Phone" id="Phonenumber" pattern="[0-9]{5,10}" required>
+            </div>
+            <div>
+                <label for="">City</label>
+                <select id="select" required>
+                    <option>--Select--</option>
+                    <option value="sai gon"> Sai Gon/option>
+                    <option value="Hue">Hue</option>
+                    <option value="Ha Noi">Ha Noi</option>
+                    <option value="Da Nang"> Da Nang</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Comment</label>
+            </div>
+            <div>
+                <textarea name="comment" id="comment" cols="20" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+    </form>
+    </fieldset>
+
+
+</body>
+<script>
+    document.getElementById("login").onsubmit=function(e){
+        e.preventDefault();
+        var LoginName=document.getElementById("name").value;
+        var Gender=document.getElementById("gender1").checked?"Male":"Female";
+        var Address=document.getElementById("Address").value;
+        var Email=document.getElementById("Email").value;
+        var Phone=document.getElementById("Phonenumber").value;
+        var City=document.getElementById("select").value;
+        var Comment=document.getElementById("comment").value;
+        var Brithday=document.getElementById("dob").value;
+        var Hobbies=document.getElementById("hobbies").value;
+
+        var a=["Thong tin"];
+        a.push(`Name:${name}`);
+        a.push(`Gender:${gender1}`);
+        a.push(`Address:${Address}`);
+        a.push(`Phone:${Phonenumber}`);
+        a.push(`City:${select}`);
+        a.push(`Commnet:${comment}`);
+        a.push(`Brithday:${dob}`);
+        a.push(`Hobbies:${hobbies}`);
+
+        var new_window=window.open();
+        new_window.document.write(a.join("<br>"));
+
+    }
+</script>
+
+</html>
