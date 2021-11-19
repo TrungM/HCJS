@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Pretest/prestest.css">
-    
+
     <style>
         fieldset {
             padding: 1rem;
+            float: left;
         }
 
         div {
@@ -18,10 +19,8 @@
         }
 
         .p1 {
+            float: right;
             border-bottom: red solid thick;
-        }
-        form{
-            width: 50%;
         }
     </style>
 
@@ -52,16 +51,16 @@
                 <input type="radio" name="gender" id="gender2" value="Female">Female
 
             </div>
-            <div id="hobbies">
+            <div>
                 <label for="">Hobbies</label>
-                <input type="checkbox" name="Shopping" id="hobbies1" value="Shopping">Shopping
-                <input type="checkbox" name="Eating out" id="hobbies2" value="Eating out">Eating out
-                <input type="checkbox" name="Sporting" id="hobbies3" value="Sporting"> Sporting
+                <input class="hb" type="checkbox" name="Shopping" id="hobbies1" value="Shopping">Shopping
+                <input class="hb" type="checkbox" name="Eating out" id="hobbies2" value="Eating out">Eating out
+                <input class="hb" type="checkbox" name="Sporting" id="hobbies3" value="Sporting"> Sporting
 
             </div>
             <div>
                 <label for="">Date of Brith</label>
-                <input type="date" id="dob" name="dob" value="2003-10-18">
+                <input class="p1" type="date" id="dob" name="dob" value="2003-10-18">
             </div>
             <div>
                 <label for="">Address</label>
@@ -90,7 +89,7 @@
                 <label for="">Comment</label>
             </div>
             <div>
-                <textarea name="comment" id="comment" cols="20" rows="10"></textarea>
+                <textarea name="comment" id="comment" cols="35" rows="10"></textarea>
             </div>
             <div>
                 <input type="submit" value="Submit">
@@ -102,31 +101,49 @@
 
 </body>
 <script>
-    document.getElementById("login").onsubmit=function(e){
+    document.getElementById("login").onsubmit = function (e) {
         e.preventDefault();
-        var LoginName=document.getElementById("name").value;
-        var Gender=document.getElementById("gender1").checked?"Male":"Female";
-        var Address=document.getElementById("Address").value;
-        var Email=document.getElementById("Email").value;
-        var Phone=document.getElementById("Phonenumber").value;
-        var City=document.getElementById("select").value;
-        var Comment=document.getElementById("comment").value;
-        var Brithday=document.getElementById("dob").value;
-        var Hobbies=document.getElementById("hobbies").value;
+        var LoginName = document.getElementById("name").value;
+        var Gender = document.getElementById("gender1").checked ? "Male" : "Female";
+        var Address = document.getElementById("Address").value;
+        var Email = document.getElementById("Email").value;
+        var Phone = document.getElementById("Phonenumber").value;
+        var City = document.getElementById("select").value;
+        var Comment = document.getElementById("comment").value;
+        var Brithday = document.getElementById("dob").value;
+        var Hobbies = document.querySelector('.hb:checked').value;
+        var Hobbies = null;
+        var inputE = document.getElementsByClassName("hb");
+        for (i = 0; inputE[i]; i++) {
+            if (inputE[i].checked) {
+                Hobbies = inputE[i].value;
+                break;
+            }
+        }
+        var dob = document.getElementById("dob").value;
+        var date_dob = new Date(dob);
+        var year = date_dob.getFullYear();
+        var current_year = new Date().getFullYear();
+        var age = current_year - year;
+        if (age < 17) {
+            alert("Do tuoi cua ban ko phu hop .Vui long nhap lai !");
+            return false;
+        }
 
-        var a=["Thong tin"];
-        a.push(`Name:${name}`);
-        a.push(`Gender:${gender1}`);
+
+        var a = ["Thong tin"];
+        a.push(`Name:${LoginName}`);
+        a.push(`Gender:${Gender}`);
         a.push(`Address:${Address}`);
-        a.push(`Phone:${Phonenumber}`);
-        a.push(`City:${select}`);
-        a.push(`Commnet:${comment}`);
+        a.push(`Phone:${Phone}`);
+        a.push(`City:${City}`);
+        a.push(`Commnet:${Comment}`);
         a.push(`Brithday:${dob}`);
-        a.push(`Hobbies:${hobbies}`);
+        a.push(`Hobbies:${Hobbies}`);
 
-        var new_window=window.open();
+        var new_window = window.open();
         new_window.document.write(a.join("<br>"));
-
+        alert(a.join("\n"));
     }
 </script>
 
