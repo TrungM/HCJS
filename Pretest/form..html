@@ -12,6 +12,7 @@
         fieldset {
             padding: 1rem;
             float: left;
+            margin-left: 500px;
         }
 
         div {
@@ -53,9 +54,9 @@
             </div>
             <div>
                 <label for="">Hobbies</label>
-                <input class="hb" type="checkbox" name="Shopping" id="hobbies1" value="Shopping">Shopping
-                <input class="hb" type="checkbox" name="Eating out" id="hobbies2" value="Eating out">Eating out
-                <input class="hb" type="checkbox" name="Sporting" id="hobbies3" value="Sporting"> Sporting
+                <input  type="checkbox" name="lan" id="hobbies1" value="Shopping" checked>Shopping
+                <input  type="checkbox" name="lan" id="hobbies2" value="Eating out" checked>Eating out
+                <input  type="checkbox" name="lan" id="hobbies3" value="Sporting"> Sporting
 
             </div>
             <div>
@@ -95,8 +96,13 @@
                 <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
             </div>
+        </fieldset>
+
+        <div id="summary">
+
+        </div>
     </form>
-    </fieldset>
+
 
 
 </body>
@@ -111,15 +117,12 @@
         var City = document.getElementById("select").value;
         var Comment = document.getElementById("comment").value;
         var Brithday = document.getElementById("dob").value;
-        var Hobbies = document.querySelector('.hb:checked').value;
-        var Hobbies = null;
-        var inputE = document.getElementsByClassName("hb");
-        for (i = 0; inputE[i]; i++) {
-            if (inputE[i].checked) {
-                Hobbies = inputE[i].value;
-                break;
-            }
-        }
+        var Hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+
+      
+
+
+
         var dob = document.getElementById("dob").value;
         var date_dob = new Date(dob);
         var year = date_dob.getFullYear();
@@ -139,12 +142,17 @@
         a.push(`City:${City}`);
         a.push(`Commnet:${Comment}`);
         a.push(`Brithday:${dob}`);
-        a.push(`Hobbies:${Hobbies}`);
+        for (var item of Hobbies) {
+            a.push(`Hobbies :${item.value}`);
+        }
 
         var new_window = window.open();
         new_window.document.write(a.join("<br>"));
         alert(a.join("\n"));
+        document.getElementById("comment").value = a.join("\n")
+        document.getElementById("summary").innerHTML = a.join("<br>")
     }
+
 </script>
 
 </html>

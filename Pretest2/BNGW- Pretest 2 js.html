@@ -39,12 +39,12 @@
     <form  action="" id="form">
         <div>
             <label for=""> Loign name <span style="color: red;">*</span> </label>
-            <input class="p1" type="text" name="name" id="name" pattern="[a-zA-Z0-9]{5,20}" required>
+            <input class="p1" type="text" name="name" id="name" pattern="[a-zA-Z0-9]{5,20}" value="aptech" required>
         </div>
 
         <div>
             <label for="">Password <span style="color: red;">*</span></label>
-            <input  class="p1" type="password" name="pass" id="pass" required>
+            <input  class="p1" type="password" name="pass" id="pass" value="123" required>
         </div>
         <div>
             <label for="">Password Confrim <span style="color: red;">*</span> </label>
@@ -83,9 +83,9 @@
         </div>
         <div>
             <label for=""> Hobbies <span style="color: red;">*</span> </label>
-            <input type="checkbox" name="swimming" id="hobbies" value="Swimming">Swimming
-            <input type="checkbox" name="dancing" id="hobbies 1" value="Dancing">Dancing
-            <input type="checkbox" name="shopping" id="hobbies 2" value="Shopping">Shopping
+            <input type="checkbox" name="lan" id="hobbies" value="Swimming" checked>Swimming
+            <input type="checkbox" name="lan" id="hobbies 1" value="Dancing" checked>Dancing
+            <input type="checkbox" name="lan" id="hobbies 2" value="Shopping">Shopping
         </div>
         <div>
             <label    for=""> Comment <span style="color: red;">*</span></label>
@@ -104,31 +104,45 @@
         e.preventDefault();
       
         var login=document.getElementById("name").value;
-        var Password=document.getElementById("pass").value;
-        var PasswordConfrim =document.getElementById("passconfrim").value;
+      
        
         var Fullname=document.getElementById("fullname").value;
      
         var Adress=document.getElementById("adress").value;
         var Email=document.getElementById("email").value;
    
-        var Brithday=document.getElementById("date").value;
+        
         var Phone=document.getElementById("phone").value;
         var Comment=document.getElementById("Comment").value;
         var Country=document.getElementById("select").value;
-        var Hobbies=document.getElementById("hobbies").value;
-       
+        var Hobbies=document.querySelectorAll('input[type=checkbox]:checked');
+        var Brithday=document.getElementById("date").value;
+        var Password=document.getElementById("pass").value;
+        var PasswordConfrim =document.getElementById("passconfrim").value;
+        if(Password!=123){
+            alert("Vui long nhap lai Pass");
+            return false;
+        }
+        if(PasswordConfrim!=123){
+            alert("Vui long nhap lai Pass");
+            return false;
+        }
+
         var a=["Chào mừng đến với Giáo dục Web "];
-        a.push(`Login Name:${name}`);
-        a.push(`Password:${pass}`);
-        a.push(`Pass confrim:${passconfrim}`);
-        a.push(`Fullname:${fullname}`);
-        a.push(`Adress:${adress}`);
-        a.push(`Email:${email}`);
-        a.push(`Brithday:${date}`);
-        a.push(`Phone number:${phone}`);
+        a.push(`Login Name:${login}`);
+        a.push(`Password:${Password}`);
+        a.push(`Pass confrim:${PasswordConfrim}`);
+        a.push(`Fullname:${Fullname}`);
+        a.push(`Adress:${Adress}`);
+        a.push(`Email:${Email}`);
+        a.push(`Brithday:${Brithday}`);
+        a.push(`Phone number:${Phone}`);
         a.push(`Comment:${Comment}`);
-        a.push(`Country:${select}`);
+        a.push(`Country:${Country}`);
+        for(var item of Hobbies){
+            a.push(`Hobbies:${item.value}`)
+        }
+
 alert(a.join("\n"));
 
         var new_window=window.open();
