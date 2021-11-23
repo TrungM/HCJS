@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            background-color:rgb(235, 146, 68);
+            height: 30px;
+        }
+          a{
+            padding: 50px;
+            text-decoration: none;
+        }
+    
+        .p2{
+            margin-left: 2rem;
+        }
+        div{
+            margin-left: 4px;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <img  class="p2" src="Logo.PNG" alt="">
+    <nav>
+        <a href="PRACTICAL EXAMINATIONBNGW.html"><span style="font-size: 1.5rem;"> Homepage</span></a>
+        <a href=""><span style="font-size: 1.5rem;">Utilities</span> </a>
+        <a href=""><span style="font-size: 1.5rem;">Share</span> </a>
+        <a href=""><span style="font-size: 1.5rem;"> Knowledge</span></a>
+        <a href=""><span style="font-size: 1.5rem;">Register</span> </a>
+        <a href=""><span style="font-size: 1.5rem;">Login</span> </a>
+        <a href=""><span style="font-size: 1.5rem;">About Us</span> </a>
+    </nav>
+    <form action="" id="Login">
+        <div>
+            <label for="">Frist name</label>
+            <input type="text" name="name" id="fristname" value="Aptech" required>
+            <span style="color: red;">*</span>
+        </div>
+        <div>
+            <label for="">Last name</label>
+            <input type="text" name="lastname" id="lastname" value="Aptech" required>
+            <span style="color: red;">*</span>
+        </div>
+        <div>
+            <label for="">Country</label>
+            <select id="Country" required>
+                <option value="Vietnam">Vietnam</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option></option>
+            </select>
+        </div>
+        <div>
+            <label for="">Gender</label>
+            <input type="radio" name="gender" id="gender_Male" value="Male"checked >Male
+            <input type="radio" name="gender" id="Female" value="Female">Female
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="text" name="email" id="email" pattern="[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{0,9}.[a-zA-Z0-9]{0,9}" required>
+            <span style="color: red;">*</span>
+        </div>
+        <div>
+            <label for="">Telephone</label>
+            <input type="text" name="telephone" id="phone" pattern="[8-12]{2,9}" value="999" required>
+            <span style="color: red;">*</span>
+        </div>
+        <div>
+            <input type="submit" value="Register" >
+            <input type="Reset" value="Reset">
+               </div>
+    </form>
+    <script>
+        document.getElementById("Login").onsubmit=function(e){
+            e.preventDefault();
+           var Fristname= document.getElementById("fristname").value;
+           var Lastname=document.getElementById("lastname").value
+           var Phone=document.getElementById("phone").value;
+
+if(Fristname!="Aptech"){
+    alert("Vui long nhap lai Fristname");
+    return false;
+}
+if(Lastname!="Aptech"){
+    alert("Vui long nhap lai Lastname");
+    return false;
+}
+
+if(Phone!="999"){
+    alert("Vui long nhap lai Phone");
+    return false;
+}
+else{
+    alert("Chuc mung ban ban da thanh cong");
+}
+        }
+    </script>
+</body>
+</html>
